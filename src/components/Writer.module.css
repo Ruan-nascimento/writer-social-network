@@ -1,0 +1,24 @@
+p + p{
+    margin-top: 1rem;
+}
+
+.post_content{
+
+    font-size: 0.95rem;
+    color: var(----mag-white);
+    line-height: 1.3rem;
+
+}
+
+.post_content_hash{
+    color: var(--blue-700);
+    font-weight: 700;
+    cursor: pointer;
+
+    transition: .1s color, .1s text-decoration;
+}
+
+.post_content_hash:hover{
+    text-decoration: underline;
+    color: var(--blue-300);
+}
