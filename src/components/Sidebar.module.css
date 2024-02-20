@@ -1,0 +1,77 @@
+.box{
+
+    background-color: var(--gray-500);
+
+    border-radius: 8px;
+    overflow: hidden;
+
+    height: 16rem;
+}
+
+.banner{
+    width: 100%;
+    height: 5rem;
+    overflow: hidden;
+    object-fit: cover;
+    margin-bottom: 2rem;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.info strong{
+  display: block;
+
+}
+
+.info span{
+  display: block; 
+  font-size: 0.75rem;
+  color: var(--mag-white); 
+}
+
+.edit{
+    display: flex;
+    justify-content: center;
+    padding: 0.7rem 1.5rem;
+
+
+}
+
+.edit button{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+
+    cursor: pointer;
+
+    background-color: transparent;
+    outline: none;
+    border: 1px solid var(--blue-500);
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+
+    font-weight: 500;
+
+    color: var(--blue-500);
+
+    transition: background-color .1s, color .1s;
+}
+
+.edit button:hover{
+    background-color: var(--blue-500);
+    color: var(--gray-900);
+}
+
+.profile{
+    margin-top: -4rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
