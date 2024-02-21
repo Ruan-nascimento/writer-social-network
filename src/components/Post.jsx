@@ -4,14 +4,29 @@ import ptBR from 'date-fns/locale/pt-BR'
 import { Avatar } from './Avatar'
 import styles from './Post.module.css'
 import { Writer } from './Writer'
-
-
+import { Comment } from './Comment';
+import { useState } from 'react';
 
 export function Post({author, published, content}) {
-    // const dateFormated = format(published, "d 'de' LLLL 'às' HH:mm'h'", {locale:ptBR})
 
-    // const publishedDateRelativeToNow = formatDistanceToNow(published, {
-    //     locale:ptBR, addSuffix: true})
+    const [comments, setComment] = useState(
+        []
+    )
+
+    const [textareaComment, setNewTextComment] = useState('')
+
+    function newComment(){
+        event.preventDefault()
+
+        const newComment = event.target.comment.value
+
+        setComment([...comments, newComment])
+
+        event.target.comment.value = ''
+
+
+    }
+
 
     return (
 
@@ -32,9 +47,6 @@ export function Post({author, published, content}) {
 
                 </div>
 
-                {/* <time title={published} dateTime={published.toISOString()} >
-                    {publishedDateRelativeToNow}
-                </time> */}
 
             </header>
 
@@ -56,13 +68,34 @@ export function Post({author, published, content}) {
 
                 <strong>Deixe seu FeedBack</strong>
                 
-                <form>
+                <form onSubmit={newComment}>
 
-                    <textarea></textarea>
+                    <textarea 
+                    name='comment' 
+                    placeholder='Deixe um comentário'></textarea>
 
                     <input type="submit" value="Publicar" />
 
                 </form>
+
+            </section>
+
+            <section className={styles.comments}>
+
+                {comments.map(com => {
+                    return(
+
+                        <Comment 
+                            src="https://github.com/Ruan-nascimento.png" 
+                            name="Ruan Carlos"
+                            time="há 2 horas atrás" 
+                            ime="há 2 horas atrás" 
+                            n_likes={10} 
+                            comment={com}
+                        />
+
+                    )
+                })}
 
             </section>
 

@@ -4,7 +4,7 @@ import app from './App.module.css'
 import { Sidebar } from './components/Sidebar'
 import { Post } from './components/Post'
 import { Writer } from './components/Writer'
-import { Comment } from './components/comment'
+import { Comment } from './components/Comment'
 import { Avatar } from './components/Avatar'
 
 
@@ -38,8 +38,9 @@ const postage = [{
     office: "Dev FullStack"
   },
   content: [
-    {type: "paragraph", content: "Galera, hoje foi dia de aprender react, mais uma boa pra carreira"},
-    {type: "paragraph", content: "amei dms o framework, to moh feliz com ele, c é loko!"},
+    {type: "paragraph", content: "Galera, hoje foi dia de aprender react, mais uma boa pra carreira, amei dms o framework, to moh feliz com ele, c é loko! fiz até alguns esquemas legais com ele, passa no meu github..."},
+    {type: "link", content: "https://github.com/Ruan-nascimento"},
+    {type: "hashtag", content: "#react #learningreact #devjunior"},
   ],
   
   publication: new Date("20-02-2024 19:00:00")
@@ -70,7 +71,7 @@ export function App() {
                 published={postage.publication}
               />
             )
-          })}
+          })},
 
 
         </main>

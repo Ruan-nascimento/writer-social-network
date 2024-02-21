@@ -1,38 +1,40 @@
 import { Avatar } from './Avatar'
-import styles from './comment.module.css'
+import styles from './Comment.module.css'
 
-export function Comment({src, name, time, comment, like=false, n_likes, image}){
+export function Comment({src, name, time, comment, n_likes}){
 
     return (
 
-        <div className={styles.box}>
+       <section className={styles.window}>
 
-            <div className={styles.content}>
-                
+            <div className={styles.main}>
 
-                <div className={styles.obj}>
-                    <Avatar src={image} Border={false}/>
+                <Avatar Border={false} src={src}/>
 
-                    <div className={styles.names}>
-                        <strong>{name}</strong>
-                        <span>{time}</span>
+                <div className={styles.geral}>
+
+                    <div className={styles.itens}>
+
+                        <div className={styles.head}>
+                            <div className={styles.names}>
+                                <strong>{name}</strong>
+                                <span>{time}</span>
+                            </div>
+                            <i class="bi bi-trash"></i>
+                        </div>
+
+                        <p className={styles.commenter}>{comment}</p>
+
+
                     </div>
+
+                    <button><i class="bi bi-hand-thumbs-up"></i>Gostei<span>{n_likes}</span></button>
+                
                 </div>
 
-                <i class="bi bi-trash"></i>
-            
             </div>
 
-            <p>{comment}</p>
-
-            <footer className={styles.like}>
-
-                <i class={like ? "bi bi-hand-thumbs-up-fill" : "bi bi-hand-thumbs-up"}></i>
-                <p>Aplaudir <span>{n_likes}</span></p>
-
-            </footer>
-
-        </div>
+       </section>
 
     )
 

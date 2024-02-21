@@ -1,83 +1,75 @@
-.box{
+.window{
 
-    background-color: var(--gray-500);
-    margin-top: -0.3rem;
-
-    border-radius: 0 0 8px 8px;
-
-
-    padding: 1.5rem;
-
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-
-}
-
-.content{
-    display: flex;
-    justify-content: space-between;
-
-    border-top: var(--gray-300) solid 1px;
+    border-top: 1px solid var(--gray-300);
+    padding-top: 1rem;
 
     margin-bottom: 1rem;
-    padding-top: 1rem;
+
+
 }
 
-.content i{
-    cursor: pointer;
-    color: var(--blue-900);
-    height: 1.08rem;
-    line-height: 0;
-}
-.content i:hover{ 
-    color: var(--danger);
-}
 
-.obj{
-    display: flex;
-    align-items: center;
+.main{
+    display: grid;
+    grid-template-columns: 3rem 1fr;
     gap: 1rem;
 }
 
 
+
+
+.head{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+.itens{
+    background-color: var(--gray-300);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
 .names strong{
     display: block;
-    text-transform: capitalize;
-    color: var(--white);
-}
-.names strong:hover{
-    text-decoration: underline;
     cursor: pointer;
+    transition: all .1s;
+}.names strong:hover{
+    color: var(--blue-900);
+    text-decoration: underline;
 }
 .names span{
     display: block;
+    margin-bottom: 1rem;
     font-size: 0.75rem;
     color: var(--mag-white);
 }
 
-.box > p{
-    background-color: var(--gray-900);
-    padding: 1rem;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-}
-
-.like{
+.geral button{
+    margin-top: 1rem;
     display: flex;
-    gap: 0.8rem;
-    align-items: center;
+    gap: 0.25rem;
     cursor: pointer;
-    width: 9rem;
-}
-.like:hover{
+    font-weight: 500;
+
+    border: none;
+    background: none;
+    color: var(--mag-white);
+    transition: .1s;
+
+}.geral button:hover{
     color: var(--blue-900);
 }
 
-
-.like span::before{
+.geral button span::before{
     content: "\2022";
-    padding: 0 0.5rem;
-
+    padding: 0 0.25rem;
 }
 
+.head i:hover{
+    color: var(--danger);
+    cursor: pointer;
+    transition: .1s;
+    transform: scale(1.01);
+}
