@@ -6,5 +6,6 @@ export default defineConfig({
   plugins: [react()],
   server:{
     port:3500,
-  }
+  },
+  base: "/writer-social-network"
 })
