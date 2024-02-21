@@ -1,9 +1,22 @@
+import { useState } from 'react'
 import { Avatar } from './Avatar'
 import styles from './Comment.module.css'
 
-export function Comment({src, name, time, comment, n_likes}){
+export function Comment({src, name, time, comment, onDeleteComment}){
+
+    const [likeCount, setLikeCount] = useState(0)
+
+    function setOneMoreLike() {
+        setLikeCount(likeCount+1)
+    }
+
+    function handleDeleteComment(){
+        onDeleteComment(comment)
+    }
 
     return (
+
+
 
        <section className={styles.window}>
 
@@ -20,7 +33,7 @@ export function Comment({src, name, time, comment, n_likes}){
                                 <strong>{name}</strong>
                                 <span>{time}</span>
                             </div>
-                            <i class="bi bi-trash"></i>
+                            <i onClick={handleDeleteComment} className="bi bi-trash"></i>
                         </div>
 
                         <p className={styles.commenter}>{comment}</p>
@@ -28,7 +41,11 @@ export function Comment({src, name, time, comment, n_likes}){
 
                     </div>
 
-                    <button><i class="bi bi-hand-thumbs-up"></i>Gostei<span>{n_likes}</span></button>
+                    <button onClick={setOneMoreLike}>
+                        <i className="bi bi-hand-thumbs-up"></i>
+                        Gostei
+                        <span>{likeCount}</span>
+                    </button>
                 
                 </div>
 

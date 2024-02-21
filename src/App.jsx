@@ -66,12 +66,13 @@ export function App() {
         {postage.map(postage => {
             return(
               <Post
+                key={postage.id}
                 author={postage.author}
                 content={postage.content}
                 published={postage.publication}
               />
             )
-          })},
+          })}
 
 
         </main>

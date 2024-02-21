@@ -25,7 +25,7 @@ export function Sidebar(props){
             <div className={styles.edit}>
 
                 <button>
-                    <i class="bi bi-pencil-square"></i>
+                    <i className="bi bi-pencil-square"></i>
                     Editar seu Perfil
                 </button>
 
