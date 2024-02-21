@@ -11,3 +11,21 @@
 
 
 }
+
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+@media (max-width:768px){
+
+    .wrapper{
+    
+        display: grid;
+        grid-template-columns:1fr;
+    
+    
+    }
+
+}

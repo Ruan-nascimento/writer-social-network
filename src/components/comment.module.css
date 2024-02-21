@@ -1,0 +1,83 @@
+.box{
+
+    background-color: var(--gray-500);
+    margin-top: -0.3rem;
+
+    border-radius: 0 0 8px 8px;
+
+
+    padding: 1.5rem;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+
+    border-top: var(--gray-300) solid 1px;
+
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.content i{
+    cursor: pointer;
+    color: var(--blue-900);
+    height: 1.08rem;
+    line-height: 0;
+}
+.content i:hover{ 
+    color: var(--danger);
+}
+
+.obj{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+.names strong{
+    display: block;
+    text-transform: capitalize;
+    color: var(--white);
+}
+.names strong:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.names span{
+    display: block;
+    font-size: 0.75rem;
+    color: var(--mag-white);
+}
+
+.box > p{
+    background-color: var(--gray-900);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.like{
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    cursor: pointer;
+    width: 9rem;
+}
+.like:hover{
+    color: var(--blue-900);
+}
+
+
+.like span::before{
+    content: "\2022";
+    padding: 0 0.5rem;
+
+}
+

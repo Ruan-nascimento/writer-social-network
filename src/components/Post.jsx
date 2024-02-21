@@ -1,9 +1,17 @@
+import { format, formatDistanceToNow } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR'
+
 import { Avatar } from './Avatar'
 import styles from './Post.module.css'
 import { Writer } from './Writer'
 
 
-export function Post(props) {
+
+export function Post({author, published, content}) {
+    // const dateFormated = format(published, "d 'de' LLLL 'às' HH:mm'h'", {locale:ptBR})
+
+    // const publishedDateRelativeToNow = formatDistanceToNow(published, {
+    //     locale:ptBR, addSuffix: true})
 
     return (
 
@@ -13,35 +21,34 @@ export function Post(props) {
 
                 <div className={styles.info_perfil}>
 
-                    <Avatar src={props.profile}/>
+                    <Avatar src={author.profile}/>
 
                     <div className={styles.id}>
 
-                        <strong>{props.name}</strong>
-                        <span>{props.office}</span>
+                        <strong>{author.name}</strong>
+                        <span>{author.office}</span>
 
                     </div>
 
                 </div>
 
-                <time title={props.publication}>
-                    {props.hour}
-                </time>
+                {/* <time title={published} dateTime={published.toISOString()} >
+                    {publishedDateRelativeToNow}
+                </time> */}
 
             </header>
 
             <section className={styles.body_}>
 
-                {props.content} 
-                {props.content2}
-                {props.content3}
-                {props.content4}
-                {props.content5}
-                {props.content6}
-                {props.content7}
-                {props.content8}
-                {props.content9}
-                {props.content10}
+                {content.map(line => {
+                    if(line.type==='paragraph'){
+                        return <p>{line.content}</p>
+                    } else if(line.type==='link'){
+                        return <p><a href={line.content} target='_blank'>{line.content}</a></p>
+                    } else if(line.type==='hashtag'){
+                        return <p className={styles.hash}>{line.content}</p>
+                    }
+                })}
 
             </section>
 
